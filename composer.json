@@ -1,0 +1,16 @@
+{
+    "name": "henri/netcard_authentication",
+    "description": "API reserved to do authentication in netcard app",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Netcard\\": "src/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.7",
+        "firebase/php-jwt": "^6.10"
+    }
+}

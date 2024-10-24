@@ -71,7 +71,7 @@ class AuthenticationImpl implements AuthenticationDao
                 'name' => $user_data['Name'],
                 'email' => $user_data['Email'],
                 'iat' => time(),
-                'exp' => 259200
+                'exp' => time() + 259200
             ];
 
             $jwt = JWT::encode($payload, $_ENV['SECRET_KEY'], 'HS256');

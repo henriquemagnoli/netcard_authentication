@@ -88,6 +88,7 @@ class AuthenticationImpl implements AuthenticationDao
             $returned_data['ID'] = $user_data['LoginId'];
             $returned_data['Name'] = $user_data['Name'];
             $returned_data['Email'] = $user_data['Email'];
+            $returned_data['IsVisible'] = $user_data['Show_user'];
             $returned_data['Token'] = $jwt;
 
             $response_message->setSuccess(true);

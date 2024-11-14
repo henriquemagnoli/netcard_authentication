@@ -74,7 +74,7 @@ class AuthenticationImpl implements AuthenticationDao
                 'exp' => time() + 259200
             ];
 
-            $expiresIn = date('m/d/Y h:i:s a', time() + 60);
+            $expiresIn = date('m/d/Y h:i:s a', time() + 259200);
 
             $jwt = JWT::encode($payload, $_ENV['SECRET_KEY'], 'HS256');
 

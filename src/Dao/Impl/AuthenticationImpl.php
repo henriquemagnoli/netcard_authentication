@@ -39,7 +39,7 @@ class AuthenticationImpl implements AuthenticationDao
             $command = $connection->prepare(HelperAuthentication::selectAllUserInfo());
             $command->bindParam(':email', $json_data->email);
             $command->execute();
-
+            
             $row_count = $command->rowCount();
 
             if($row_count === 0)
@@ -67,7 +67,7 @@ class AuthenticationImpl implements AuthenticationDao
             }
 
             $payload = [
-                'id' => $user_data['LoginId'],
+                'id' => $user_data['UserId'],
                 'name' => $user_data['Name'],
                 'email' => $user_data['Email'],
                 'iat' => time(),
@@ -87,7 +87,7 @@ class AuthenticationImpl implements AuthenticationDao
             $connection->commit();
 
             $returned_data = array();
-            $returned_data['ID'] = $user_data['LoginId'];
+            $returned_data['ID'] = $user_data['UserId'];
             $returned_data['Name'] = $user_data['Name'];
             $returned_data['Email'] = $user_data['Email'];
             $returned_data['IsVisible'] = $user_data['Show_user'];
